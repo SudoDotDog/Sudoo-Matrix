@@ -51,12 +51,3 @@ export const getMatrixSize = (matrix: Matrix<any>): MatrixSize => {
         y: firstRow.length,
     };
 };
-
-export const isMatrixHasSameSize = (left: Matrix<any>, right: Matrix<any>): boolean => {
-
-    const leftSize: MatrixSize = getMatrixSize(left);
-    const rightSize: MatrixSize = getMatrixSize(right);
-
-    return leftSize.x === rightSize.x
-        && leftSize.y === rightSize.y;
-};
