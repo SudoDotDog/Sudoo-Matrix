@@ -26,7 +26,7 @@ describe('Given [Add] function', (): void => {
 
         const runner: () => any = () => matrixAdd(left, right);
 
-        expect(runner).to.be.throw("ss");
+        expect(runner).to.be.throw("[Sudoo-Matrix] Only matrixes with same size can add");
     });
 
     it('should be able to add two matrix together', (): void => {

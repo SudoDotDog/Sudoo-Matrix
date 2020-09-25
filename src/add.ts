@@ -13,7 +13,7 @@ export const matrixAdd = <T extends any = any>(left: Matrix<T>, right: Matrix<T>
     const rightSize: MatrixSize = getMatrixSize(right);
 
     if (leftSize.x !== rightSize.x
-        && leftSize.y !== rightSize.y) {
+        || leftSize.y !== rightSize.y) {
         throw new Error("[Sudoo-Matrix] Only matrixes with same size can add");
     }
 
