@@ -5,3 +5,9 @@
  */
 
 export type Matrix<T> = T[][];
+
+export type MatrixSize = {
+
+    readonly x: number;
+    readonly y: number;
+};

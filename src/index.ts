@@ -6,4 +6,5 @@
 
 export * from "./add";
 export * from "./declare";
+export * from "./util";
 
