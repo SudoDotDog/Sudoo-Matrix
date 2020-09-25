@@ -47,4 +47,18 @@ describe('Given [Util] helper functions', (): void => {
             [undefined, undefined, undefined],
         ]);
     });
+
+    it('should be able to init matrix with initial value', (): void => {
+
+        const value: number = chance.natural();
+        const result: Matrix<number> = initMatrix({
+            x: 2,
+            y: 3,
+        }, value);
+
+        expect(result).to.be.deep.equal([
+            [value, value, value],
+            [value, value, value],
+        ]);
+    });
 });

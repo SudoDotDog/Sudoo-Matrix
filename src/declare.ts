@@ -11,3 +11,5 @@ export type MatrixSize = {
     readonly x: number;
     readonly y: number;
 };
+
+export type ManipulateFunction<T> = (left: T, right: T) => T;
