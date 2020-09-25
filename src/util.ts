@@ -17,6 +17,10 @@ export const validateMatrix = (matrix: Matrix<any>): boolean => {
         return false;
     }
 
+    if (firstRow.length === 0) {
+        return false;
+    }
+
     const columns: number = firstRow.length;
     for (let i = 1; i < matrix.length; i++) {
 

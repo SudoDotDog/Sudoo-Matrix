@@ -7,13 +7,30 @@
 
 import { expect } from 'chai';
 import * as Chance from 'chance';
+import { validateMatrix } from '../../src/util';
 
 describe('Given [Util] helper functions', (): void => {
 
     const chance: Chance.Chance = new Chance('matrix-util');
 
-    it('Placeholder', (): void => {
+    it('should be able to validate matrix - other', (): void => {
 
-        expect(chance.string()).to.be.not.equal(chance.string());
+        const result: boolean = validateMatrix(chance.string() as any);
+
+        expect(result).to.be.false;
+    });
+
+    it('should be able to validate matrix - empty row', (): void => {
+
+        const result: boolean = validateMatrix([]);
+
+        expect(result).to.be.false;
+    });
+
+    it('should be able to validate matrix - empty column', (): void => {
+
+        const result: boolean = validateMatrix([[], []]);
+
+        expect(result).to.be.false;
     });
 });
