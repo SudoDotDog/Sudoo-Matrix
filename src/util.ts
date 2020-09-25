@@ -36,6 +36,14 @@ export const validateMatrix = (matrix: Matrix<any>): boolean => {
     return true;
 };
 
+export const initMatrix = (size: MatrixSize): Matrix<any> => {
+
+    const rows: any[][] = new Array(size.x).fill(undefined);
+    return rows.map(() => {
+        return new Array(size.y).fill(undefined);
+    });
+};
+
 export const getMatrixSize = (matrix: Matrix<any>): MatrixSize => {
 
     const firstRow: any[] | undefined = matrix[0];
