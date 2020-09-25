@@ -12,10 +12,24 @@ import { Matrix } from '../../src/declare';
 
 describe('Given [Add] function', (): void => {
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const chance: Chance.Chance = new Chance('matrix-add');
 
-    it('should be able to add two method together', (): void => {
+    it('should be able to throw when invalid adding', (): void => {
+
+        const left: Matrix<number> = [
+            [chance.natural(), chance.natural()],
+            [chance.natural(), chance.natural()],
+        ];
+        const right: Matrix<number> = [
+            [chance.natural(), chance.natural()],
+        ];
+
+        const runner: () => any = () => matrixAdd(left, right);
+
+        expect(runner).to.be.throw("ss");
+    });
+
+    it('should be able to add two matrix together', (): void => {
 
         const left: Matrix<number> = [
             [1, 2],
@@ -28,6 +42,9 @@ describe('Given [Add] function', (): void => {
 
         const result: Matrix<number> = matrixAdd(left, right);
 
-        expect(result).to.be.deep.equal([]);
+        expect(result).to.be.deep.equal([
+            [3, 3],
+            [7, 7],
+        ]);
     });
 });
