@@ -36,11 +36,11 @@ export const validateMatrix = (matrix: Matrix<any>): boolean => {
     return true;
 };
 
-export const initMatrix = (size: MatrixSize): Matrix<any> => {
+export const initMatrix = <T extends any = any>(size: MatrixSize, initValue?: T): Matrix<any> => {
 
-    const rows: any[][] = new Array(size.x).fill(undefined);
+    const rows: any[][] = new Array(size.x).fill(initValue);
     return rows.map(() => {
-        return new Array(size.y).fill(undefined);
+        return new Array(size.y).fill(initValue);
     });
 };
 

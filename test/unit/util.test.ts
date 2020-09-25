@@ -7,7 +7,8 @@
 
 import { expect } from 'chai';
 import * as Chance from 'chance';
-import { validateMatrix } from '../../src/util';
+import { Matrix } from '../../src/declare';
+import { initMatrix, validateMatrix } from '../../src/util';
 
 describe('Given [Util] helper functions', (): void => {
 
@@ -32,5 +33,18 @@ describe('Given [Util] helper functions', (): void => {
         const result: boolean = validateMatrix([[], []]);
 
         expect(result).to.be.false;
+    });
+
+    it('should be able to init matrix', (): void => {
+
+        const result: Matrix<any> = initMatrix({
+            x: 2,
+            y: 3,
+        });
+
+        expect(result).to.be.deep.equal([
+            [undefined, undefined, undefined],
+            [undefined, undefined, undefined],
+        ]);
     });
 });
