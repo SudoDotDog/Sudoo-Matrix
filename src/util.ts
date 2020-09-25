@@ -34,8 +34,16 @@ export const validateMatrix = (matrix: Matrix<any>): boolean => {
 
 export const getMatrixSize = (matrix: Matrix<any>): MatrixSize => {
 
+    const firstRow: any[] | undefined = matrix[0];
+    if (!Array.isArray(firstRow)) {
+        return {
+            x: matrix.length,
+            y: 0,
+        };
+    }
+
     return {
-        x: 0,
-        y: 0,
+        x: matrix.length,
+        y: firstRow.length,
     };
 };
