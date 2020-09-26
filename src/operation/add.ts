@@ -4,8 +4,8 @@
  * @description Add
  */
 
-import { ManipulateFunction, Matrix, MatrixSize } from "./declare";
-import { getMatrixSize, initMatrix } from "./util";
+import { ManipulateFunction, Matrix, MatrixSize } from "../declare";
+import { getMatrixSize, initMatrix } from "../util";
 
 export const matrixAdd = <T extends any = any>(left: Matrix<T>, right: Matrix<T>, addFunction?: ManipulateFunction<T>): Matrix<T> => {
 

@@ -4,8 +4,8 @@
  * @description Index
  */
 
-export * from "./add";
 export * from "./declare";
-export * from "./minus";
+export * from "./operation/add";
+export * from "./operation/minus";
 export * from "./util";
 

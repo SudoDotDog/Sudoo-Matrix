@@ -4,8 +4,8 @@
  * @description Minus
  */
 
-import { ManipulateFunction, Matrix, MatrixSize } from "./declare";
-import { getMatrixSize, initMatrix } from "./util";
+import { ManipulateFunction, Matrix, MatrixSize } from "../declare";
+import { getMatrixSize, initMatrix } from "../util";
 
 export const matrixMinus = <T extends any = any>(left: Matrix<T>, right: Matrix<T>, minusFunction?: ManipulateFunction<T>): Matrix<T> => {
 
