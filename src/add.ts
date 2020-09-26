@@ -29,6 +29,13 @@ export const matrixAdd = <T extends any = any>(left: Matrix<T>, right: Matrix<T>
 
                 const currentLeft: any = left[i][j];
                 const currentRight: any = right[i][j];
+
+                const isNumber: boolean = typeof currentLeft === 'number' && typeof currentRight === 'number';
+                const isString: boolean = typeof currentLeft === 'string' && typeof currentRight === 'string';
+
+                if (!(isNumber || isString)) {
+                    throw new Error("[Sudoo-Matrix] Please provide addFunction for not-number or not-string value");
+                }
                 // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
                 result[i][j] = currentLeft + currentRight;
             }
