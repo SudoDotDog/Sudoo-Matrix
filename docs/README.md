@@ -14,3 +14,7 @@ yarn add @sudoo/matrix
 # Or
 npm install @sudoo/matrix --save
 ```
+
+## Operations
+
+-   [Add Operation](./add.md)
