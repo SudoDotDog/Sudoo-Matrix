@@ -1,9 +1,33 @@
 # Add Operation
 
-`Sudoo-Matrix` support add operation. 
+`Sudoo-Matrix` support add operation. Add operation only can process matrix with same size.
 
 ## Basic Usage
 
+For matrix typed `string` or `number` add operation can be run at default setting.
+
 ```ts
-import { matrixAdd } from "@sudoo/matrix";
+import { matrixAdd, Matrix } from "@sudoo/matrix";
+
+const result: Matrix<number> = matrixAdd(
+    [
+        [1, 1],
+        [1, 1],
+    ],
+    [
+        [1, 2],
+        [3, 4],
+    ],
+);
 ```
+
+The `result` variable type for the above code is
+
+```ts
+[
+    [2, 3],
+    [4, 5],
+]
+```
+
+## Add Function Override
