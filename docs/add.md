@@ -31,3 +31,32 @@ The `result` variable type for the above code is
 ```
 
 ## Add Function Override
+
+For matrix type other than `string` or `number` add operation much run with a override add function.
+
+```ts
+import { matrixAdd, Matrix } from "@sudoo/matrix";
+
+const result: Matrix<number> = matrixAdd(
+    [
+        [true, true],
+        [true, true],
+    ],
+    [
+        [true, false],
+        [true, false],
+    ],
+    (a: boolean, b: boolean) => {
+        return Number(a) + Number(b);
+    },
+);
+```
+
+The `result` variable type for the above code is
+
+```ts
+[
+    [2, 1],
+    [2, 1],
+]
+```
