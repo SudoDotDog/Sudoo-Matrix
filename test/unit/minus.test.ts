@@ -1,16 +1,16 @@
 /**
  * @author WMXPY
  * @namespace Matrix
- * @description Add
+ * @description Minus
  * @package Unit Test
  */
 
 import { expect } from 'chai';
 import * as Chance from 'chance';
-import { matrixAdd } from '../../src';
+import { matrixMinus } from '../../src';
 import { Matrix } from '../../src/declare';
 
-describe('Given [Add Matrix] function', (): void => {
+describe('Given [Minus Matrix] function', (): void => {
 
     const chance: Chance.Chance = new Chance('matrix-add');
 
@@ -24,9 +24,9 @@ describe('Given [Add Matrix] function', (): void => {
             [chance.natural(), chance.natural()],
         ];
 
-        const runner: () => any = () => matrixAdd(left, right);
+        const runner: () => any = () => matrixMinus(left, right);
 
-        expect(runner).to.be.throw("[Sudoo-Matrix] Only matrixes with same size can add");
+        expect(runner).to.be.throw("[Sudoo-Matrix] Only matrixes with same size can minus");
     });
 
     it('should be able to add two matrix together', (): void => {
@@ -40,11 +40,11 @@ describe('Given [Add Matrix] function', (): void => {
             [4, 3],
         ];
 
-        const result: Matrix<number> = matrixAdd(left, right);
+        const result: Matrix<number> = matrixMinus(left, right);
 
         expect(result).to.be.deep.equal([
-            [3, 3],
-            [7, 7],
+            [-1, 1],
+            [-1, 1],
         ]);
     });
 });
