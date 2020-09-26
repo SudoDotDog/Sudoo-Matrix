@@ -29,8 +29,13 @@ export const matrixMinus = <T extends any = any>(left: Matrix<T>, right: Matrix<
 
                 const currentLeft: any = left[i][j];
                 const currentRight: any = right[i][j];
-                // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-                result[i][j] = currentLeft + currentRight;
+
+                const isNumber: boolean = typeof currentLeft === 'number' && typeof currentRight === 'number';
+
+                if (!isNumber) {
+                    throw new Error("[Sudoo-Matrix] Please provide minusFunction for not-number value");
+                }
+                result[i][j] = currentLeft - currentRight as any;
             }
         }
     }
