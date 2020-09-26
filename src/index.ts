@@ -6,6 +6,7 @@
 
 export * from "./declare";
 export * from "./operation/add";
+export * from "./operation/hadamard";
 export * from "./operation/minus";
 export * from "./util";
 
